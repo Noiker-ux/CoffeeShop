@@ -5,22 +5,28 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+@layer base {
+  @font-face {
+    font-family: "SoDo Sans Black";
+    src: url("/public/fonts/SoDoSans-Black.ttf");
+  }
+}
+
+@layer utilities {
+  .bg-gradient-custom-toxic {
+    background-image: radial-gradient(#93be5f, #519b38, #070d0b);
+  }
+  .bg-gradient-custom-snow {
+    background-image: radial-gradient(#112777, #0b62a5, #77d6c8);
+  }
+}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
