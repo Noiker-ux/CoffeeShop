@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
+import Experience from "@/components/Experience/Experience";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -56,7 +57,10 @@ export default function RootLayout({
             </ul>
           </nav>
         </header>
-        {children}
+        <main>
+          <Experience />
+          {children}
+        </main>
       </body>
     </html>
   );
