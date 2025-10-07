@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Link from "next/link";
-import Image from "next/image";
-import Experience from "@/components/Experience/Experience";
+import Header from "@/components/Header/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,50 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className="fixed z-90 h-screen justify-center  max-w-36  px-5 py-5">
-          <Link href="/" className="flex gap-3 items-center text-white font-extrabold text-2xl">
-            <Image src={"/icons/LogoSturbucks.png"} alt="Logotype Starbucks" width={52} height={52} />
-            <p>STARBUCKS</p>
-          </Link>
-          <nav className="h-full">
-            <ul className="flex flex-col gap-5 h-full justify-center font-[SoDo Sans Black] text-xs text-center text-white font-extrabold ">
-              <li className="hover:bg-green-700 rounded-sm p-1 transition-all">
-                <Link href="#" className="flex flex-col justify-center items-center gap-1">
-                  <Image src="/icons/toxic.png" alt="ToxicDreams" width={38} height={38} />
-                  <p>Toxic Dreams</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="" className="flex flex-col justify-center items-center gap-1">
-                  <Image src="/icons/snowflake.png" alt="ToxicDreams" width={38} height={38} />
-                  <p>Cold Reason</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="" className="flex flex-col justify-center items-center gap-1">
-                  <Image src="/icons/fire.png" alt="ToxicDreams" width={38} height={38} />
-                  <p>Fireman</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="" className="flex flex-col justify-center items-center gap-1">
-                  <Image src="/icons/water.png" alt="ToxicDreams" width={38} height={38} />
-                  <p>Power Sea</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="" className="flex flex-col justify-center items-center gap-1">
-                  <Image src="/icons/tornado.png" alt="ToxicDreams" width={38} height={38} />
-                  <p>Tornado</p>
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <main>
-          <Experience />
-          {children}
-        </main>
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );

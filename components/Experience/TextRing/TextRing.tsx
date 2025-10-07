@@ -1,16 +1,15 @@
 "use client";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Text3D } from "@react-three/drei";
+import { MeshDiscardMaterial, Text3D } from "@react-three/drei";
 import { IRingProps } from "./TextRing.props";
 import { Group } from "three";
 
-export default function TextRing({ text, radius, height, segments }: IRingProps) {
+export default function TextRing({ text, radius, height, segments, posY }: IRingProps) {
   const ref = useRef<Group>(null);
 
   useFrame((state, delta) => {
     if (ref.current) {
-      console.log(typeof ref.current);
       ref.current.rotation.y -= delta * 0.2;
     }
   });
@@ -24,15 +23,15 @@ export default function TextRing({ text, radius, height, segments }: IRingProps)
     textPositions.push({ x, z });
   }
   return (
-    <group ref={ref} rotation-z={Math.PI * 0.1}>
+    <group ref={ref}>
       <mesh>
         <cylinderGeometry args={[radius, radius, height, segments]} />
-        <meshBasicMaterial transparent opacity={0} side={2} />
+        <MeshDiscardMaterial transparent opacity={0} side={2} />
       </mesh>
       {text.split("").map((char: string, index: number) => (
         <Text3D
           key={index}
-          position={[textPositions[index].x, 0, textPositions[index].z]}
+          position={[textPositions[index].x, posY, textPositions[index].z]}
           rotation={[0, angleStep * index + Math.PI * 2, 0]}
           size={0.9}
           lineHeight={1}

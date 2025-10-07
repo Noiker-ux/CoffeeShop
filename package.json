@@ -11,13 +11,17 @@
   "dependencies": {
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.3.0",
+    "@react-three/postprocessing": "^3.0.4",
     "@types/three": "^0.180.0",
+    "glslify-loader": "^2.0.0",
     "load-bmfont": "^1.4.2",
     "next": "15.5.4",
+    "raw-loader": "^4.0.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "three": "^0.180.0",
-    "three-bmfont-text": "^3.0.1"
+    "three-bmfont-text": "^3.0.1",
+    "vite-plugin-glsl": "^1.5.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

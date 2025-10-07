@@ -1,20 +1,12 @@
-import { Float, OrbitControls } from "@react-three/drei";
-import { extend } from "@react-three/fiber";
-import * as THREE from "three";
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-extend(THREE as any);
+import { Float } from "@react-three/drei";
 
 export default function CoffeeСup() {
   return (
-    <>
-      {" "}
-      <OrbitControls />
-      <Float rotation-y={-Math.PI * 0.15}>
-        <mesh>
-          <cylinderGeometry args={[2, 2, 6, 64]} />
-          <meshStandardMaterial side={2} />
-        </mesh>
-      </Float>
-    </>
+    <Float rotation-y={-Math.PI * 0.15}>
+      <mesh>
+        <cylinderGeometry args={[2, 2, 6, 64]} />
+        <meshStandardMaterial side={2} />
+      </mesh>
+    </Float>
   );
 }

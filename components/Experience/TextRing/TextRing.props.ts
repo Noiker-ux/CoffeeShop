@@ -3,4 +3,5 @@ export interface IRingProps {
   radius: number;
   height: number;
   segments: number;
+  posY: number;
 }
